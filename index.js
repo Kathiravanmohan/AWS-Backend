@@ -3,10 +3,14 @@ import express from 'express'
 import { MongoClient } from 'mongodb';
 
 import * as dotenv  from "dotenv";
+import cors from 'cors';
+
 
 dotenv.config();
 const app =  express()
 const PORT=8000
+
+app.use(cors())
 console.log(process.env.Mongo_Url)
 const MongoUrl=process.env.Mongo_Url
 async function createConnections() {
